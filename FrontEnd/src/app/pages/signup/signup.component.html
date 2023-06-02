@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Đăng Ký Tài Khoản</h1>
-  <form [formGroup]="formSignup" (ngSubmit)="onHandleSubmit">
+  <form [formGroup]="formSignup" (ngSubmit)="onHandleSubmit()">
     <div class="mb-3">
         <label for="" class="form-label">Name</label>
         <input type="text" class="form-control" formControlName="name">

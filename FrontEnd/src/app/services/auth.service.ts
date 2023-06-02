@@ -11,6 +11,8 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   signup(user: any): Observable<any>{
+    console.log(user);
+    
     return this.http.post('http://localhost:8080/api/signup', user)
   }
 }
