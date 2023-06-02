@@ -12,30 +12,38 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
 import { ProductAddComponent } from './pages/admin/product-add/product-add.component';
 import { ProductEditComponent } from './pages/admin/product-edit/product-edit.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { SigninComponent } from './pages/signin/signin.component';
 
 const routes: Routes = [
-  {
-    path: "", component: BaseLayoutComponent, children: [
-      { path: "", component: HomePageComponent },
-      { path: "about", component: AboutPageComponent },
-      { path: "product", component: ProductPageComponent },
-      { path: "product/:id", component: ProductDetailComponent }
-    ]
-  },
-  {
-    path: "admin", component: AdminLayoutComponent, children: [
-      { path: "", redirectTo: "dashboard", pathMatch: "full" },
-      { path: "dashboard", component: DashboardComponent },
-      { path: "product", component: ProductListComponent },
-      { path: "product/add", component: ProductAddComponent },
-      { path: "product/:id/edit", component: ProductEditComponent },
-    ]
-  },
-  { path: "**", component: PageNotFoundComponent }
-]
+    {
+        path: '',
+        component: BaseLayoutComponent,
+        children: [
+            { path: '', component: HomePageComponent },
+            { path: 'about', component: AboutPageComponent },
+            { path: 'product', component: ProductPageComponent },
+            { path: 'signup', component: SignupComponent },
+            { path: 'signin', component: SigninComponent },
+            { path: 'product/:id', component: ProductDetailComponent },
+        ],
+    },
+    {
+        path: 'admin',
+        component: AdminLayoutComponent,
+        children: [
+            { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+            { path: 'dashboard', component: DashboardComponent },
+            { path: 'product', component: ProductListComponent },
+            { path: 'product/add', component: ProductAddComponent },
+            { path: 'product/:id/edit', component: ProductEditComponent },
+        ],
+    },
+    { path: '**', component: PageNotFoundComponent },
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
