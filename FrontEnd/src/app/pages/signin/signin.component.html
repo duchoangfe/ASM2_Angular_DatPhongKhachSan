@@ -1,16 +1,33 @@
 <div class="container">
-  <h1>Đăng Nhập Tài Khoản</h1>
-  <form action="">
+  <h1>Đăng nhập Tài Khoản</h1>
+  <form [formGroup]="formSignin" (ngSubmit)="onHandleSubmit()">
+
     <div class="mb-3">
-      <label for="" class="form-label">Email
-      </label>
-      <input type="text" class="form-control">
+      <label for="" class="form-label">Email</label>
+      <input type="text" class="form-control" formControlName="email">
+      <div
+        *ngIf="formSignin.get('email')?.hasError('required') && (formSignin.get('email')?.touched || formSignin.get('email')?.dirty)">
+        Email is required</div>
+      <div
+        *ngIf="formSignin.get('email')?.hasError('email') && (formSignin.get('email')?.touched || formSignin.get('email')?.dirty)">
+        Email invalid</div>
     </div>
     <div class="mb-3">
       <label for="" class="form-label">Password</label>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" formControlName="password">
+      <div
+        *ngIf="formSignin.get('password')?.hasError('required') && (formSignin.get('password')?.touched || formSignin.get('password')?.dirty)">
+        Password is required</div>
+      <div
+        *ngIf="formSignin.get('password')?.hasError('minlength') && (formSignin.get('password')?.touched || formSignin.get('password')?.dirty)">
+        Min 6 characters</div>
     </div>
 
-    <button class="btn btn-primary">Đăng Nhập</button>
+
+    <button>Đăng Nhập</button>
   </form>
+</div>
+<div *ngIf="userData">
+  <p>Email: {{ userData.email }}</p>
+  <p>Password: {{ userData.password }}</p>
 </div>
