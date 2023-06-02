@@ -15,6 +15,6 @@ app.use("/api", productRouter);
 app.use("/api", categoryRouter);
 app.use("/api", authRouter);
 
-mongoose.connect("mongodb://127.0.0.1:27017/we17302");
+mongoose.connect("mongodb://127.0.0.1:27017/BackEnd");
 
 export const viteNodeApp = app;

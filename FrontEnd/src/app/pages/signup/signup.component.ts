@@ -24,7 +24,7 @@ export class SignupComponent {
     const password = form.get('password')?.value;
     const confirmPassword = form.get('confirmPassword')?.value;
     if(password === confirmPassword) return null
-    return { notMatch: true};
+    return { notMatch: true}
   }
 
   onHandleSubmit(){
