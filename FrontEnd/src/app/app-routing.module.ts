@@ -14,6 +14,9 @@ import { ProductEditComponent } from './pages/admin/product-edit/product-edit.co
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { SigninComponent } from './pages/signin/signin.component';
+import { CategoryListComponent } from './components/category-list/category-list.component';
+import { CategoryAddComponent } from './pages/admin/category/category-add/category-add.component';
+import { CategoryEditComponent } from './pages/admin/category/category-edit/category-edit.component';
 
 const routes: Routes = [
     {
@@ -37,6 +40,9 @@ const routes: Routes = [
             { path: 'product', component: ProductListComponent },
             { path: 'product/add', component: ProductAddComponent },
             { path: 'product/:id/edit', component: ProductEditComponent },
+            { path: 'categories', component: CategoryListComponent },
+            { path: 'categories/add', component: CategoryAddComponent },
+            { path: 'categories/:id/edit', component: CategoryEditComponent },
         ],
     },
     { path: '**', component: PageNotFoundComponent },

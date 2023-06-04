@@ -1,0 +1,29 @@
+<div class="container">
+    <a routerLink="/admin/categories/add">New category</a>
+    <table class="table table-borederd">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody *ngIf="categories && categories.length">
+            <tr *ngFor="let category of categories; index as i">
+                <td>{{ i + 1 }}</td>
+                <td>{{ category.name }}</td>
+                <td>
+                    <button
+                        class="btn btn-danger mr-1"
+                        (click)="removeItem(category.id)"
+                    >
+                        Delete
+                    </button>
+                    <a routerLink="/admin/categories/{{ category.id }}/edit"
+                        >Update</a
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

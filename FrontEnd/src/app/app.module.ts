@@ -18,6 +18,9 @@ import { ProductAddComponent } from './pages/admin/product-add/product-add.compo
 import { ProductEditComponent } from './pages/admin/product-edit/product-edit.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { SigninComponent } from './pages/signin/signin.component';
+import { CategoryListComponent } from './components/category-list/category-list.component';
+import { CategoryAddComponent } from './pages/admin/category/category-add/category-add.component';
+import { CategoryEditComponent } from './pages/admin/category/category-edit/category-edit.component';
 
 // decorator typescript
 @NgModule({
@@ -36,7 +39,10 @@ import { SigninComponent } from './pages/signin/signin.component';
     ProductAddComponent,
     ProductEditComponent,
     SignupComponent,
-    SigninComponent
+    SigninComponent,
+    CategoryListComponent,
+    CategoryAddComponent,
+    CategoryEditComponent
   ],
   imports: [
     BrowserModule,
