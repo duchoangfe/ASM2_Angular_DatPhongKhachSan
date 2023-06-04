@@ -9,31 +9,34 @@ import { Observable } from 'rxjs';
 export class CategoryService {
     constructor(private http: HttpClient) {}
     getCategory(): Observable<ICate[]> {
-        return this.http.get<ICate[]>(`http://localhost:3000/categories`);
+        return this.http.get<ICate[]>(`http://localhost:8080/api/categories`);
     }
-    getCategoryById(id: number): Observable<ICate> {
-        return this.http.get<ICate>(`http://localhost:3000/categories/${id}`);
-    }
-    addCategory(product: ICate): Observable<ICate> {
-        return this.http.post<ICate>(
-            `http://localhost:3000/categories`,
-            product
+
+    getCategoryById(_id: number): Observable<ICate> {
+        return this.http.get<ICate>(
+            `http://localhost:8080/api/categories/${_id}`
         );
     }
-    updateCategory(product: ICate): Observable<ICate> {
+    addCategory(category: ICate): Observable<ICate> {
+        return this.http.post<ICate>(
+            `http://localhost:8080/api/categories`,
+            category
+        );
+    }
+    updateCategory(category: ICate): Observable<ICate> {
         return this.http.put<ICate>(
-            `http://localhost:3000/categories/${product.id}`,
-            product
+            `http://localhost:8080/api/categories/${category._id}`,
+            category
         );
     }
     deleteCategory(id: number): Observable<ICate> {
         return this.http.delete<ICate>(
-            `http://localhost:3000/categories/${id}`
+            `http://localhost:8080/api/categories/${id}`
         );
     }
     relatedCategory(categoryId: number): Observable<any> {
         return this.http.get<any>(
-            `http://localhost:3000/categories/${categoryId}?_embed=categories`
+            `http://localhost:8080/api/categories/${categoryId}?_embed=categories`
         );
     }
 }

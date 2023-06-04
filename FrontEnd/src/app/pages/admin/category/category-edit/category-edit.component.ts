@@ -22,13 +22,14 @@ export class CategoryEditComponent {
         private formBuilder: FormBuilder,
         private router: Router
     ) {
-        // Observable
-        this.route.paramMap.subscribe((param) => {
-            const id = Number(param.get('id'));
+        this.route.paramMap.subscribe((param: any) => {
+            const id = param.get('id');
+
             this.categoryService.getCategoryById(id).subscribe((category) => {
                 this.category = category;
+
                 this.categoryForm.patchValue({
-                    name: category.name,
+                    name: this.category.name,
                 });
             });
         });
@@ -37,7 +38,7 @@ export class CategoryEditComponent {
         if (this.categoryForm.invalid) return;
 
         const category: ICate = {
-            id: this.category.id,
+            _id: this.category._id,
             name: this.categoryForm.value.name || '',
         };
         this.categoryService.updateCategory(category).subscribe((data) => {

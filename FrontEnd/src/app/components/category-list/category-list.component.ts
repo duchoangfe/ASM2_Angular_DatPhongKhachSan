@@ -12,15 +12,18 @@ export class CategoryListComponent {
 
     constructor(private categoryService: CategoryService) {
         this.categoryService.getCategory().subscribe(
-            (data) => {
-                this.categories = data;
+            (data: any) => {
+                this.categories = data.categories;
             },
             (error) => console.log(error.message)
         );
     }
-    removeItem(id: any) {
-        this.categoryService.deleteCategory(id).subscribe(() => {
-            this.categories = this.categories.filter((item) => item.id !== id);
+    removeItem(_id: any) {
+        this.categoryService.deleteCategory(_id).subscribe(() => {
+            console.log(_id);
+            this.categories = this.categories.filter(
+                (item) => item._id !== _id
+            );
         });
     }
 }
