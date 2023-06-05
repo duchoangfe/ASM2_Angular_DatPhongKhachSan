@@ -4,4 +4,5 @@ export interface IRoom {
     price: number;
     img?: string;
     description: string;
+    categoryId: string;
 }

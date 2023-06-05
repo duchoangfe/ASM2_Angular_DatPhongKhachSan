@@ -25,7 +25,12 @@ export class RoomListComponent {
     // xoa API
     this.roomService.deleteRoom(_id).subscribe(() => {
       // reRender
-      this.rooms = this.rooms.filter(item => item._id !== _id)
+      if(window.confirm('bạn có chắc chắn muốn xóa?')){
+        this.rooms = this.rooms.filter(item => item._id !== _id);
+        alert("Xóa thành công")
+      }else{
+
+      }
     })
     // this.onRemove.emit(id);
   }

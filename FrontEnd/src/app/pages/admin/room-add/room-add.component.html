@@ -1,9 +1,8 @@
-<form (ngSubmit)="onHandleSubmit()">
+<form (ngSubmit)="onHandleSubmit()" [formGroup]="roomForm">
     <div class="mb-3">
         <input
             type="text"
-            [(ngModel)]="room.name"
-            name="name"
+            formControlName="name"
             class="form-control"
             placeholder="Tên sản phẩm"
         />
@@ -11,8 +10,7 @@
     <div class="mb-3">
         <input
             type="number"
-            [(ngModel)]="room.price"
-            name="price"
+            formControlName="price"
             class="form-control"
             placeholder="Giá sản phẩm"
         />
@@ -20,8 +18,7 @@
     <div class="mb-3">
         <input
             type="text"
-            [(ngModel)]="room.img"
-            name="img"
+            formControlName="img"
             class="form-control"
             placeholder="Ảnh sản phẩm"
         />
@@ -29,12 +26,19 @@
     <div class="mb-3">
         <input
             type="text"
-            [(ngModel)]="room.description"
-            name="description"
+            formControlName="description"
             class="form-control"
             placeholder="Mô Tả sản phẩm"
         />
     </div>
-    {{ room | json }}
+    <div class="mb-3">
+        <!-- <select name="" id="">
+            <option value="-- chọn --"></option>
+        </select> -->
+        <select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}">
+            <option *ngFor="let category of categories" [value]="category._id" >{{ category.name }}</option>
+          </select>          
+    </div>
+    <!-- {{ room | json }} -->
     <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
 </form>

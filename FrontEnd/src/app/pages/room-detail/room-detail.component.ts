@@ -12,7 +12,8 @@ export class RoomDetailComponent {
     name: "",
     price: 0,
     img: "",
-    description: ""
+    description: "",
+    categoryId: "",
   }
   constructor(
     private route: ActivatedRoute,
