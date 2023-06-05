@@ -79,7 +79,7 @@ export class RoomEditComponent {
       categoryId: (this.selectedCategory._id || '').toString()
     }
 
-    this.roomService.updateRoom(room).subscribe(data => {
+    this.roomService.updateRoom(room).subscribe((data) => {
       console.log(data)
     })
 
