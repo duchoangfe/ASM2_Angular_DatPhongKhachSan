@@ -1,0 +1,34 @@
+<div class="container">
+    <a routerLink="admin/room/add">Thêm mới</a>
+    <table class="table table-borederd">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Ảnh</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody *ngIf="rooms && rooms.length">
+            <tr *ngFor="let room of rooms; index as i">
+                <td>{{ i + 1 }}</td>
+                <td><img src="{{ room.img }}" /></td>
+                <td>{{ room.name }}</td>
+                <td>{{ room.price }}</td>
+                <td>{{ room.description }}</td>
+                <td>
+                    <button
+                        class="btn btn-danger mr-1"
+                        (click)="removeItem(room._id)"
+                    >
+                        Xóa
+                    </button>
+                    <a routerLink="/admin/room/{{ room._id }}/edit"
+                        >Cập nhật</a
+                    >
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

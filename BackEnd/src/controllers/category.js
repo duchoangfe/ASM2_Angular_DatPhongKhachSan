@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 import joi from 'joi';
-import Product from '../models/product';
+import Room from '../models/room';
 import Category from '../models/category';
 
 dotenv.config();
@@ -30,7 +30,7 @@ export const getAll = async (req, res) => {
 export const get = async (req, res) => {
   try {
     const category = await Category.findById(req.params.id).populate(
-      'products'
+      'rooms'
     );
     if (!category) {
       return res.json({
@@ -71,10 +71,10 @@ export const create = async (req, res) => {
 };
 export const deleteCate = async (req, res) => {
   try {
-    const product = await Category.findByIdAndDelete(req.params.id);
+    const category = await Category.findByIdAndDelete(req.params.id);
     return res.json({
       message: 'Xóa sản phẩm thành công',
-      product,
+      category,
     });
   } catch (error) {
     return res.status(400).json({
@@ -84,21 +84,21 @@ export const deleteCate = async (req, res) => {
 };
 export const updateCate = async (req, res) => {
   try {
-    const product = await Category.findOneAndUpdate(
+    const category = await Category.findOneAndUpdate(
       { _id: req.params.id },
       req.body,
       {
         new: true,
       }
     );
-    if (!product) {
+    if (!category) {
       return res.json({
         message: 'Cập nhật sản phẩm không thành công',
       });
     }
     return res.json({
       message: 'Cập nhật sản phẩm thành công',
-      product,
+      category,
     });
   } catch (error) {
     return res.status(400).json({

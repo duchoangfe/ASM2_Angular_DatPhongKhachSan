@@ -5,7 +5,7 @@ const categorySchema = new mongoose.Schema(
         name: {
             type: String,
         },
-        products: [{ type: mongoose.Types.ObjectId, ref: "Product" }],
+        rooms: [{ type: mongoose.Types.ObjectId, ref: "Room" }],
     },
     { timestamps: true, versionKey: false }
 );
