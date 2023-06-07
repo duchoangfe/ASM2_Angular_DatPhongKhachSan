@@ -30,11 +30,6 @@ export class RoomAddComponent {
 
 
   selectedValue: string = '';
-  // items = [
-  //   { label: 'Option 1', value: 'value1' },
-  //   { label: 'Option 2', value: 'value2' },
-  //   { label: 'Option 3', value: 'value3' }
-  // ];
     roomForm = this.formBuilder.group({
     name: ['', [Validators.required, Validators.minLength(3)]],
     price: [0],
