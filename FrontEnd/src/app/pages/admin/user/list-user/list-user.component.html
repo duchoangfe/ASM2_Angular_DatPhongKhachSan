@@ -1,1 +1,34 @@
 <p>list-user works!</p>
+<div class="container">
+    <a routerLink="/admin/room/add">Thêm mới</a>
+    <table class="table table-borederd">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Ảnh</th>
+                <th>Họ Và Tên</th>
+                <th>Số Điện Thoại</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="listUser && listUser.length">
+            <tr *ngFor="let listUser of listUser; index as i">
+                <td>{{ i + 1 }}</td>
+                <td><img src="{{ listUser.img }}" /></td>
+                <td>{{ listUser.userName }}</td>
+                <td>{{ listUser.phone }}</td>
+                <td>{{ listUser.email }}</td>
+                <td>
+                    <button
+                        class="btn btn-danger mr-1"
+                        (click)="removeUser(listUser.id)"
+                    >                       Xóa
+                    </button>
+                    <!-- <a routerLink="/admin/room/{{ listUser._id }}/edit"
+                        >Cập nhật</a
+                    > -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

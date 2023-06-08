@@ -10,10 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-user.component.scss']
 })
 export class AddUserComponent {
-  // selectedValue: string = ''; 
-
-  users : User[] = []
-  
+  users : User[] = [] 
   usersFrom = this.formBuilder.group({
     userName : ['',[Validators.required,Validators.minLength(10)]] ,
     phone: [null,[Validators.required,Validators.minLength(7)]],
@@ -41,6 +38,6 @@ export class AddUserComponent {
    this.UserService.addUser(room).subscribe(data => {
     console.log(data);
    })
-   this.router.navigate(["/admin/room"])
+   this.router.navigate(["/admin/user"])
   }
 }

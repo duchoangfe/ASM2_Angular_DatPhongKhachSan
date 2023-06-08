@@ -16,12 +16,13 @@ export class UserService {
     return this.http.post<User>(`https://6470e98e3de51400f7251ab9.mockapi.io/users`,user)
   }
   editUser( user: User) : Observable<User>{
-    return this.http.put<User>(`https://6470e98e3de51400f7251ab9.mockapi.io/users/${user._id}`,user)
+    return this.http.put<User>(`https://6470e98e3de51400f7251ab9.mockapi.io/users/${user.id}`,user)
   }
-  getUserId( _id: number) : Observable<User>{
-    return this.http.get<User>(`https://6470e98e3de51400f7251ab9.mockapi.io/users/${_id}`)
+  getUserId( id: number) : Observable<User>{
+    return this.http.get<User>(`https://6470e98e3de51400f7251ab9.mockapi.io/users/${id}`)
   }
-  removeUser( _id: number) : Observable<User>{
-    return this.http.delete<any>(`https://6470e98e3de51400f7251ab9.mockapi.io/users/${_id}`)
+  removeUser( id: number) : Observable<User>{
+    console.log("id",id)
+    return this.http.delete<User>(`https://6470e98e3de51400f7251ab9.mockapi.io/users/${id}`)
   }
 }
