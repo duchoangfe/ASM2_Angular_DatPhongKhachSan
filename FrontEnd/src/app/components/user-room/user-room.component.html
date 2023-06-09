@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let room of rooms; index as i">
+      <div class="card">
+        <img src="{{ room.img }}" class="card-img-top" alt="Room Image">
+        <div class="card-body">
+          <h5 class="card-title">{{ room.name }}</h5>
+          <p class="card-text">{{ room.description }}</p>
+          <p class="card-text">Giá: {{ room.price }}</p>
+
+          <ng-container *ngIf="hasUserInfo">
+            <p class="btn btn-primary">Đặt Phòng Ngay</p>
+          </ng-container>
+
+          <ng-container *ngIf="!hasUserInfo">
+            <p>Bạn cần phải đăng nhập để đặt phòng.</p>
+            <a href="/signin" class="btn btn-primary">Đăng nhập</a>
+          </ng-container>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

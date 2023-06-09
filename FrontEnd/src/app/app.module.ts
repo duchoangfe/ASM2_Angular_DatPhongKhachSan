@@ -26,42 +26,43 @@ import { CategoryDetailComponent } from './pages/category-detail/category-detail
 import { AddUserComponent } from './pages/admin/user/add-user/add-user.component';
 import { EditUserComponent } from './pages/admin/user/edit-user/edit-user.component';
 import { ListUserComponent } from './pages/admin/user/list-user/list-user.component';
+import { UserRoomComponent } from './components/user-room/user-room.component';
 
-// decorator typescript
 @NgModule({
-  declarations: [
-    AppComponent,
-    RoomListComponent,
-    HomePageComponent,
-    BaseLayoutComponent,
-    AdminLayoutComponent,
-    AboutPageComponent,
-    RoomPageComponent,
-    PageNotFoundComponent,
-    DashboardComponent,
-    AdminRoomComponent,
-    RoomDetailComponent,
-    RoomAddComponent,
-    RoomEditComponent,
-    SignupComponent,
-    SigninComponent,
-    CategoryListComponent,
-    CategoryAddComponent,
-    CategoryEditComponent,
-    CategoryPageComponent,
-    CategoryDetailComponent,
-    AddUserComponent,
-    EditUserComponent,
-    ListUserComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        RoomListComponent,
+        HomePageComponent,
+        BaseLayoutComponent,
+        AdminLayoutComponent,
+        AboutPageComponent,
+        RoomPageComponent,
+        PageNotFoundComponent,
+        DashboardComponent,
+        AdminRoomComponent,
+        RoomDetailComponent,
+        RoomAddComponent,
+        RoomEditComponent,
+        SignupComponent,
+        SigninComponent,
+        CategoryListComponent,
+        CategoryAddComponent,
+        CategoryEditComponent,
+        CategoryPageComponent,
+        CategoryDetailComponent,
+        AddUserComponent,
+        EditUserComponent,
+        ListUserComponent,
+        UserRoomComponent,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
