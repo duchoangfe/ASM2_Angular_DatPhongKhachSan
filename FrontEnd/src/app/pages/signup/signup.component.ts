@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from './../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-signup',
@@ -8,7 +9,7 @@ import { AuthService } from './../../services/auth.service';
     styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent {
-    constructor(private fb: FormBuilder, private authService: AuthService) {}
+    constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {}
     formSignup = this.fb.group(
         {
             name: ['', [Validators.required]],
@@ -28,9 +29,10 @@ export class SignupComponent {
 
     onHandleSubmit() {
         if (this.formSignup.valid) {
+            alert('Đăng Ký Thành Công !');
             this.authService.signup(this.formSignup.value).subscribe((data) => {
-                alert('Đăng Ký Thành Công !');
             });
         }
+        this.router.navigate(["/signin"])
     }
 }

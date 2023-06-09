@@ -7,6 +7,7 @@
                 <th>Ảnh</th>
                 <th>Tên sản phẩm</th>
                 <th>Giá</th>
+                <th>Danh mục</th>
                 <th></th>
             </tr>
         </thead>
@@ -17,6 +18,13 @@
                 <td>{{ room.name }}</td>
                 <td>{{ room.price }}</td>
                 <td>{{ room.description }}</td>
+                <!-- <ng-container *ngIf="rooms && room.categoryId"> -->
+                    <!-- <td *ngFor="let categoryId of room.categoryId">
+                        <p *ngIf="category">
+                          {{ category.find(c => c.id === categoryId)?.name }}
+                        </p>
+                      </td> -->
+                <!-- </ng-container> -->
                 <td>
                     <button
                         class="btn btn-danger mr-1"
