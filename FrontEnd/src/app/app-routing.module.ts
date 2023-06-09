@@ -51,8 +51,9 @@ const routes: Routes = [
             { path: 'categories', component: CategoryListComponent },
             { path: 'categories/add', component: CategoryAddComponent },
             { path: 'categories/:id/edit', component: CategoryEditComponent },
-            { path: 'user', component: ListUserComponent },
-            { path: 'user/add', component: AddUserComponent },
+            { path: 'user', component: ListUserComponent},
+            { path: 'user/add', component: AddUserComponent},
+            { path: 'user/:id/edit', component: AddUserComponent},
         ],
     },
 
