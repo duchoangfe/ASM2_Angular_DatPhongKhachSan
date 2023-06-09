@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let room of rooms; index as i">
+      <div class="card">
+        <img src="{{ room.img }}" class="card-img-top" alt="Room Image">
+        <div class="card-body">
+          <h5 class="card-title">{{ room.name }}</h5>
+          <p class="card-text">{{ room.description }}</p>
+          <p class="card-text">Giá: {{ room.price }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
