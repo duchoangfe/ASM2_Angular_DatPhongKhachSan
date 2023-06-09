@@ -1,0 +1,44 @@
+<form (ngSubmit)="onHandleSubmit()" [formGroup]="usersFrom">
+    <div class="mb-3">
+        <input
+            type="text"
+            formControlName="userName"
+            class="form-control"
+            placeholder=" Ho Va Ten"
+        />
+    </div>
+    <div class="mb-3">
+        <input
+            type="number"
+            formControlName="phone"
+            class="form-control"
+            placeholder="Phone"
+        />
+    </div>
+    <div class="mb-3">
+        <input
+            type="text"
+            formControlName="img"
+            class="form-control"
+            placeholder="Ảnh sản phẩm"
+        />
+    </div>
+    <div class="mb-3">
+        <input
+            type="text"
+            formControlName="email"
+            class="form-control"
+            placeholder="email"
+        />
+    </div>
+    <div class="mb-3">
+        <input
+            type="password"
+            formControlName="passWord"
+            class="form-control"
+            placeholder="password"
+        />
+    </div>
+    <!-- {{ room | json }} -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

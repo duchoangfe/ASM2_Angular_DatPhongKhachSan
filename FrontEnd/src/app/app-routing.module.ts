@@ -19,6 +19,8 @@ import { CategoryAddComponent } from './pages/admin/category/category-add/catego
 import { CategoryEditComponent } from './pages/admin/category/category-edit/category-edit.component';
 import { CategoryPageComponent } from './pages/category-page/category-page.component';
 import { CategoryDetailComponent } from './pages/category-detail/category-detail.component';
+import { AddUserComponent } from './pages/admin/user/add-user/add-user.component';
+import { ListUserComponent } from './pages/admin/user/list-user/list-user.component';
 
 const routes: Routes = [
     {
@@ -47,8 +49,11 @@ const routes: Routes = [
             { path: 'categories', component: CategoryListComponent },
             { path: 'categories/add', component: CategoryAddComponent },
             { path: 'categories/:id/edit', component: CategoryEditComponent },
+            { path: 'user', component: ListUserComponent},
+            { path: 'user/add', component: AddUserComponent},
         ],
     },
+    
     { path: '**', component: PageNotFoundComponent },
 ];
 
