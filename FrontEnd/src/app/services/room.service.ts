@@ -24,7 +24,7 @@ export class RoomService {
     }
     updateRoom(room: IRoom): Observable<IRoom> {
         return this.http.put<IRoom>(
-            `http://localhost:8080.api/rooms/${room._id}`,
+            `http://localhost:8080/api/rooms/${room._id}`,
             room
         );
     }

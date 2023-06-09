@@ -4,7 +4,7 @@
             type="text"
             formControlName="name"
             class="form-control"
-            [value]="room.name"
+            [(ngModel)]="room.name"
             placeholder="Tên sản phẩm"
         />
     </div>
@@ -13,6 +13,7 @@
             type="number"
             formControlName="price"
             class="form-control"
+            [(ngModel)]="room.price"
             placeholder="Giá sản phẩm"
         />
     </div>
@@ -21,6 +22,7 @@
             type="text"
             formControlName="img"
             class="form-control"
+            [(ngModel)]="room.img"
             placeholder="Ảnh sản phẩm"
         />
     </div>
@@ -29,6 +31,7 @@
             type="text"
             formControlName="description"
             class="form-control"
+            [(ngModel)]="room.description"
             placeholder="Mô Tả sản phẩm"
         />
     </div>
@@ -37,10 +40,10 @@
         <!-- <select name="" id="">
             <option value="-- chọn --"></option>
         </select> -->
-        <select [(ngModel)]="selectedValue" formControlName="categoryId">
-            <option *ngFor="let category of categories" [value]="category._id" >{{ category.name }}</option>
+        <select [(ngModel)]="room.categoryId" formControlName="categoryId">
+            <option *ngFor="let category of categories" [value]="category._id" [selected]="[category._id == room.categoryId ? true : false]">{{ category.name }}</option>
           </select>          
     </div>
-    {{ room | json }}
+    <!-- {{ roomForm | json }} -->
     <button type="submit" class="btn btn-primary">Cập nhật sản phẩm</button>
 </form>

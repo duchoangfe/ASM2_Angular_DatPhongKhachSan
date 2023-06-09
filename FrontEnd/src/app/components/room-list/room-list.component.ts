@@ -29,13 +29,6 @@ export class RoomListComponent {
       
       this.rooms = data.rooms.data;
     }, error => console.log(error.message))
-
-    this.route.paramMap.subscribe(param => {
-      const _id = Number(param.get('_id'));
-      this.categoryService.getCategoryById(_id).subscribe(category => {
-        this.category = category;
-      })
-    })
   }
   removeItem(_id: any) {
     // xoa API

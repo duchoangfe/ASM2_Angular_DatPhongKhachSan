@@ -15,6 +15,9 @@ export const getAll = async (req, res) => {
                 [_sort]: _order === "desc" ? -1 : 1,
             },
         },
+        populate: {
+            path: 'categoryId'
+        }
     };
     try {
         const rooms = await Room.paginate({}, options);
@@ -81,8 +84,9 @@ export const create = async (req, res) => {
     }
 };
 export const update = async (req, res) => {
+    console.log(req.body);
     try {
-        const room = await Room.findOneAndUpdate({ _id: req.params._id }, req.body, {
+        const room = await Room.findByIdAndUpdate({ _id: req.params.id }, req.body, {
             new: true,
         });
         if (!room) {

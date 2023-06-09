@@ -55,17 +55,21 @@ export class RoomEditComponent {
     private formBuilder: FormBuilder
     ) {
 
+      console.log(this.roomForm);
     // Observable
     this.route.paramMap.subscribe(param => {
-      const _id = Number(param.get('_id'));
-      this.roomService.getRoomById(_id).subscribe(room => {
-        this.room = room;
+      const _id = param.get('id');
+      console.log(_id);
+      
+      this.roomService.getRoomById(_id as any).subscribe((data: any) => {
+        this.room = data.room;
+
       })
     })
   }
   onHandleSubmit() {
 
-    console.log(this.roomForm);
+    console.log(this.roomForm.value);
     
 
     if(this.roomForm.invalid) return;
@@ -76,13 +80,14 @@ export class RoomEditComponent {
       price: this.roomForm.value.price || 0,
       img: this.roomForm.value.img || '',
       description: this.roomForm.value.description || '',
-      categoryId: (this.selectedCategory._id || '').toString()
+      categoryId: this.roomForm.value.categoryId || '',
     }
+    console.log(room);
+    
 
     this.roomService.updateRoom(room).subscribe((data) => {
       console.log(data)
     })
-
     this.router.navigate(['admin/room'])
   }
 }
