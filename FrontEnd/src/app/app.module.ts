@@ -27,6 +27,7 @@ import { AddUserComponent } from './pages/admin/user/add-user/add-user.component
 import { EditUserComponent } from './pages/admin/user/edit-user/edit-user.component';
 import { ListUserComponent } from './pages/admin/user/list-user/list-user.component';
 import { UserRoomComponent } from './components/user-room/user-room.component';
+import { BookingRoomComponent } from './components/booking-room/booking-room.component';
 
 @NgModule({
     declarations: [
@@ -54,6 +55,7 @@ import { UserRoomComponent } from './components/user-room/user-room.component';
         EditUserComponent,
         ListUserComponent,
         UserRoomComponent,
+        BookingRoomComponent,
     ],
     imports: [
         BrowserModule,

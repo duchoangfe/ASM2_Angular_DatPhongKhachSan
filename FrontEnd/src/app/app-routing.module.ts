@@ -21,6 +21,7 @@ import { CategoryPageComponent } from './pages/category-page/category-page.compo
 import { CategoryDetailComponent } from './pages/category-detail/category-detail.component';
 import { AddUserComponent } from './pages/admin/user/add-user/add-user.component';
 import { ListUserComponent } from './pages/admin/user/list-user/list-user.component';
+import { BookingRoomComponent } from './components/booking-room/booking-room.component';
 
 const routes: Routes = [
     {
@@ -35,6 +36,7 @@ const routes: Routes = [
             { path: 'signup', component: SignupComponent },
             { path: 'signin', component: SigninComponent },
             { path: 'room/:id', component: RoomDetailComponent },
+            { path: 'booking/:id', component: BookingRoomComponent },
         ],
     },
     {
@@ -59,6 +61,7 @@ const routes: Routes = [
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
+
     exports: [RouterModule],
 })
 export class AppRoutingModule {}

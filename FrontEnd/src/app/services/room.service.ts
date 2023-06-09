@@ -13,14 +13,11 @@ export class RoomService {
     getRooms(): Observable<IRoom[]> {
         return this.http.get<IRoom[]>(`http://localhost:8080/api/rooms`);
     }
-    getRoomById(_id: number): Observable<IRoom> {
-        return this.http.get<IRoom>(`http://localhost:8080/api/rooms/${_id}`);
+    getRoomById(_id: any): Observable<any> {
+        return this.http.get<any>(`http://localhost:8080/api/rooms/${_id}`);
     }
     addRoom(room: IRoom): Observable<IRoom> {
-        return this.http.post<IRoom>(
-            `http://localhost:8080/api/rooms`,
-            room
-        );
+        return this.http.post<IRoom>(`http://localhost:8080/api/rooms`, room);
     }
     updateRoom(room: IRoom): Observable<IRoom> {
         return this.http.put<IRoom>(
