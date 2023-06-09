@@ -7,8 +7,15 @@
           <h5 class="card-title">{{ room.name }}</h5>
           <p class="card-text">{{ room.description }}</p>
           <p class="card-text">Giá: {{ room.price }}</p>
+          <p class="card-text">Loại phòng: {{ room.categoryId?.name }}</p>
         </div>
       </div>
+      <h2>Thông tin khách đặt phòng</h2>
+      <h5>Tên</h5>
+      <p class="text-black">{{ name }}</p>
+      <h5>Email</h5>
+      <p class="text-black">{{ email }}</p>
     </div>
+    <button class="btn btn-primary">Đặt Phòng Ngay</button>
   </div>
 </div>
