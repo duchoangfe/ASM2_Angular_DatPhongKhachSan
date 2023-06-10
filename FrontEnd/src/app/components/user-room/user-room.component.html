@@ -4,12 +4,16 @@
       <div class="card">
         <img src="{{ room.img }}" class="card-img-top" alt="Room Image">
         <div class="card-body">
-          <h5 class="card-title">{{ room._id }}</h5>
+
           <h5 class="card-title">{{ room.name }}</h5>
           <p class="card-text">{{ room.description }}</p>
           <p class="card-text">Giá: {{ room.price }}</p>
+<<<<<<< HEAD
           <p class="card-text">Loại: {{ room.categoryId?.name }}</p>
 
+=======
+          <p class="card-text">Loại Phòng: {{ room.categoryId?.name }}</p>
+>>>>>>> c8e3e2791db1b02a477d32763f3ef4f648a5f48d
           <ng-container *ngIf="hasUserInfo">
             <a class="btn btn-primary" [routerLink]="['/booking', room._id]">Đặt Phòng Ngay</a>
           </ng-container>
