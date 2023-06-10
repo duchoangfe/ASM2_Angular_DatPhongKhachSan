@@ -1,12 +1,13 @@
 
 <div class="container">
+    <h3>{{title}}</h3>
     <table class="table table-borederd">
       <thead>
         <tr>
           <th>#</th>
           <th>Name</th>
           <th>email</th>
-          <th>PassWord</th>
+          <th>Active</th>
         </tr>
       </thead>
       <tbody *ngIf="users && users.length">
@@ -14,12 +15,15 @@
           <td>{{ i + 1 }}</td>
           <td>{{ user.name}}</td>
           <td>{{ user.email }}</td>
-          <td>{{ user.password}}</td>
+          <td>{{ user.active }}</td>
 
           <td>
-            <button class="btn btn-danger mr-1" (click)="removeUser(user.id)">
+            <button class="btn btn-danger mr-1" (click)="removeUser(user._id)">
               Xóa
             </button>
+            <button class="btn btn-primary mr-1" (click)="unAcout(user._id)">
+                {{user.active !== "Inactive" ? "Khóa" : "Mở"}}
+              </button>
           </td>
         </tr>
       </tbody>

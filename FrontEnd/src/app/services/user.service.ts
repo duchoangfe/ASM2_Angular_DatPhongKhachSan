@@ -17,4 +17,14 @@ export class UserService {
     console.log("id",id)
     return this.http.delete<User>(`http://localhost:8080/api/users/${id}`)
   }
+  inActiveAccount( id: number) : Observable<User>{
+    return this.http.get<User>(`http://localhost:8080/api/users/${id}`)
+  }
+
+  getUserId(id: number): Observable<User> {
+    console.log("id",id)
+    return this.http.get<User>(
+        `http://localhost:8080/api/users/${id}`
+    );
+}
 }

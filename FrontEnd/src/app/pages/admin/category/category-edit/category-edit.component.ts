@@ -27,6 +27,7 @@ export class CategoryEditComponent {
 
             this.categoryService.getCategoryById(id).subscribe((category) => {
                 this.category = category;
+                console.log("categori",category)
 
                 this.categoryForm.patchValue({
                     name: this.category.name,
