@@ -8,19 +8,23 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./list-user.component.scss']
 })
 export class ListUserComponent {
- listUser : User[] = []
- constructor (private userVice: UserService){
-   this.userVice.getUser().subscribe(data => {
-    this.listUser = data;
-   },error => console.log(error))
- }
- 
+  users: User[] = [];
 
- removeUser(id: any) {
-  this.userVice.removeUser(id).subscribe(() => {
-  // console.log('id' ,_id)
-    console.log('Ban da xoa thanh cong')
-    this.listUser = this.listUser.filter(item => item.id != id)
-  })  
+
+  constructor(private user: UserService) {
+    this.user.getUser().subscribe((data : any) => {
+            this.users = data.users;
+            console.log("user",  this.users)
+        },
+        (error) => console.log(error.message)
+    );
 }
+  
+  removeUser(id : any){
+    this.user.removeUser(id).subscribe(() =>{
+      console.log("Ban Xoa Thanh Cong")
+      this.users = this.users.filter(item => item.id != id)
+    })
+  }
+
 }
