@@ -15,7 +15,7 @@
     <tbody *ngIf="rooms && rooms.length">
       <tr *ngFor="let room of rooms; index as i">
         <td>{{ i + 1 }}</td>
-        <td><img src="{{ room.img }}" /></td>
+        <td><img style="width: 100px" src="{{ room.img }}" /></td>
         <td>{{ room.name }}</td>
         <td>{{ room.price }}</td>
         <td>{{ room.description }}</td>
