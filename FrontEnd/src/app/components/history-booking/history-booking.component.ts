@@ -6,36 +6,32 @@ import { RoomService } from 'src/app/services/room.service';
 import { IRoom } from 'src/app/interfaces/Room';
 
 @Component({
-  selector: 'app-history-booking',
-  templateUrl: './history-booking.component.html',
-  styleUrls: ['./history-booking.component.scss']
+    selector: 'app-history-booking',
+    templateUrl: './history-booking.component.html',
+    styleUrls: ['./history-booking.component.scss'],
 })
 export class HistoryBookingComponent {
-  history: bookingRoom[] = [];
-  rooms: IRoom[] = [];
-  email: any;
-  constructor(private bookingRoom: BookingroomService,
-    private room: RoomService) {
+    history: bookingRoom[] = [];
+    rooms: IRoom[] = [];
+    email: any;
+    constructor(
+        private bookingRoom: BookingroomService,
+        private room: RoomService
+    ) {
+        this.email = localStorage.getItem('email');
+        console.log('email', this.email);
+        this.bookingRoom
+            .getBookingRoomByid(this.email)
+            .subscribe((data: any) => {
+                this.history = data;
+                console.log('data', data);
+                // console.log("Id", data[0]?.roomId)
 
-    this.email = localStorage.getItem("email");
-    console.log("email", this.email)
-    this.bookingRoom.getBookingRoomByid(this.email).subscribe(
-      (data: any) => {
-        this.history = data;
-        console.log("data",data)
-        // console.log("Id", data[0]?.roomId)
-
-        // this.room.getRoomById(data[0]?.roomId).subscribe(
-        //   (data2: any) => {
-        //     this.history = data2;
-        //   },
-        // )
-      },
-    );
-
-
-
-
-  }
-
+                // this.room.getRoomById(data[0]?.roomId).subscribe(
+                //   (data2: any) => {
+                //     this.history = data2;
+                //   },
+                // )
+            });
+    }
 }
