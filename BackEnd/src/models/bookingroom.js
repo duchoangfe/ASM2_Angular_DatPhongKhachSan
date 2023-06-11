@@ -7,20 +7,23 @@ const bookingroom = new mongoose.Schema(
       type: String,
     },
     email: {
-      type: String
+      type: String,
     },
     roomId: {
       type: mongoose.Types.ObjectId,
-            ref: "Room",
+      ref: 'Room',
+    },
+    roomName: {
+      type: String,
     },
     checkInDate: {
-      type: String
+      type: String,
     },
     checkOutDate: {
-      type: String
+      type: String,
     },
     numberOfGuests: {
-      type: Number
+      type: Number,
     },
     brand: {
       type: mongoose.Types.ObjectId,
