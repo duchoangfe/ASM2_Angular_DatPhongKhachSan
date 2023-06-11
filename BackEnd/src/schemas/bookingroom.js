@@ -4,5 +4,8 @@ export const bookingroomSchema = joi.object({
   price: joi.number().required(),
   description: joi.string(),
   img: joi.string(),
-  categoryId: joi.string().required(),
+  user: joi.string().required(),
+  checkInDate: joi.string().required(),
+  checkOutDate: joi.string().required(),
+  numberOfGuests: joi.string().required(),
 });

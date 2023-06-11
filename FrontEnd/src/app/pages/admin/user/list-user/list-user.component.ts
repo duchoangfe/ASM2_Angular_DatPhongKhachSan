@@ -20,7 +20,9 @@ export class ListUserComponent {
     private route: ActivatedRoute
   ) {
     this.user.getUser().subscribe((data: any) => {
-      this.users = data.users;
+      this.users = data.user;
+      console.log(data.user);
+      
       // console.log("user",  this.users)
     },
       (error) => console.log(error.message)

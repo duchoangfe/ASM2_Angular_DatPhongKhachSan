@@ -19,6 +19,21 @@ const bookingroom = new mongoose.Schema(
       type: mongoose.Types.ObjectId,
       ref: 'Category',
     },
+    user: {
+      type: String
+    },
+    email: {
+      type: String
+    },
+    checkInDate: {
+      type: String
+    },
+    checkOutDate: {
+      type: String
+    },
+    numberOfGuests: {
+      type: Number
+    },
     brand: {
       type: mongoose.Types.ObjectId,
       ref: 'Brand',
