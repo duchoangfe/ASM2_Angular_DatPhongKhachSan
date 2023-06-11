@@ -21,6 +21,7 @@ import { CategoryPageComponent } from './pages/category-page/category-page.compo
 import { CategoryDetailComponent } from './pages/category-detail/category-detail.component';
 import { ListUserComponent } from './pages/admin/user/list-user/list-user.component';
 import { BookingRoomComponent } from './components/booking-room/booking-room.component';
+import { HistoryBookingComponent } from './components/history-booking/history-booking.component';
 
 const routes: Routes = [
     {
@@ -36,6 +37,7 @@ const routes: Routes = [
             { path: 'signin', component: SigninComponent },
             { path: 'room/:id', component: RoomDetailComponent },
             { path: 'booking/:id', component: BookingRoomComponent },
+            { path: 'history', component: HistoryBookingComponent },
         ],
     },
     {

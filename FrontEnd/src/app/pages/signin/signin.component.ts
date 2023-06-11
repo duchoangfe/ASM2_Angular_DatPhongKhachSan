@@ -36,7 +36,6 @@ export class SigninComponent {
                     localStorage.setItem('role', data.user.role);
                     localStorage.setItem('name', data.user.name);
                     localStorage.setItem('email', data.user.email);
-
                     this.router.navigateByUrl('/');
                 });
         }

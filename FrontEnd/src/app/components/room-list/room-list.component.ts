@@ -12,6 +12,7 @@ import { RoomService } from 'src/app/services/room.service';
     styleUrls: ['./room-list.component.scss'],
 })
 export class RoomListComponent {
+   
     rooms: IRoom[] = [];
     category: ICate = {
         name: '',
@@ -20,11 +21,11 @@ export class RoomListComponent {
         private route: ActivatedRoute,
         private categoryService: CategoryService,
         private roomService: RoomService
-    ) {
+    ) { 
+        
         this.roomService.getRooms().subscribe(
             (data: any) => {
-                console.log(data.rooms.data);
-
+          
                 this.rooms = data.rooms.data;
             },
             (error) => console.log(error.message)

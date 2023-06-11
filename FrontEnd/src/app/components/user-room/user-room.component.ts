@@ -16,7 +16,7 @@ export class UserRoomComponent {
     constructor(private roomService: RoomService) {
         this.roomService.getRooms().subscribe(
             (data: any) => {
-                console.log(data.rooms.data);
+             
 
                 this.rooms = data.rooms.data;
             },

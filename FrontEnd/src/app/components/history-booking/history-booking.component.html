@@ -1,0 +1,32 @@
+<p>history-booking works!</p>
+<div class="container">
+    <a routerLink="/admin/room/add">Thêm mới</a>
+    <table class="table table-borederd">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Khách Hàng</th>
+          <th>Email</th>
+          <th>Ngày Đặt</th>
+          <th>Ngày Hết </th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody *ngIf="history && history.length">
+        <tr *ngFor="let historys of history; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{ historys.name }}</td>
+          <td>{{ historys.email }}</td>
+          <td>{{ historys.checkInDate }}</td>
+          <td>{{ historys.checkOutDate}}</td>
+  
+          <!-- <td>
+            <button class="btn btn-danger mr-1" (click)="removeItem(room._id)">
+              Xóa
+            </button>
+            <a routerLink="/admin/room/{{ room._id }}/edit">Cập nhật</a>
+          </td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>

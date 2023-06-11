@@ -27,6 +27,7 @@ import { CategoryDetailComponent } from './pages/category-detail/category-detail
 import { ListUserComponent } from './pages/admin/user/list-user/list-user.component';
 import { UserRoomComponent } from './components/user-room/user-room.component';
 import { BookingRoomComponent } from './components/booking-room/booking-room.component';
+import { HistoryBookingComponent } from './components/history-booking/history-booking.component';
 
 @NgModule({
     declarations: [
@@ -53,6 +54,7 @@ import { BookingRoomComponent } from './components/booking-room/booking-room.com
         ListUserComponent,
         UserRoomComponent,
         BookingRoomComponent,
+        HistoryBookingComponent,
     ],
     imports: [
         BrowserModule,

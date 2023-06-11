@@ -31,3 +31,39 @@ export const create = async (req, res) => {
     });
   }
 };
+export const get = async (req, res) => {
+  try {
+    const room = await bookingroom.find({email : req.params.email});
+    if (!room) {
+      return res.json({
+        message: 'Không tìm thấy danh mục',
+      });
+    }
+    return res.json(room);
+  } catch (error) {
+    return res.status(400).json({
+      message: "loi tim kiem",
+    });
+  }
+};
+
+export const getAll = async (req, res) => {
+  try {
+    const room = await bookingroom.find({});
+    if (!room) {
+      return res.json({
+        message: 'Không có user',
+      });
+    }
+    return res.json({
+      message: 'Lấy User thành công ',
+      room,
+    });
+  } catch (error) {
+    return res.status(400).json({
+      message: "loi",
+    });
+  }
+
+
+};

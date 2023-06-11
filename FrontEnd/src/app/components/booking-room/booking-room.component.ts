@@ -10,6 +10,7 @@ import { BookingroomService } from './../../services/bookingroom.service';
     styleUrls: ['./booking-room.component.scss'],
 })
 export class BookingRoomComponent implements OnInit {
+
     isLoggedIn: boolean = false;
     _id: any;
     name: any;
@@ -31,6 +32,8 @@ export class BookingRoomComponent implements OnInit {
         this.name = localStorage.getItem('name');
         this.email = localStorage.getItem('email');
         this.hasUserInfo = this.name ? true : false;
+        console.log("email",this.email)
+
 
         this.route.paramMap.subscribe((param) => {
             const _id = param.get('id');
