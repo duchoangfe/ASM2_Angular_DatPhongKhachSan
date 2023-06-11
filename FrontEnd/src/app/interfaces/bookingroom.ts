@@ -4,4 +4,5 @@ export interface bookingRoom {
     email: string;
     checkInDate: string;
     checkOutDate: String;
+    roomName:string;
 }

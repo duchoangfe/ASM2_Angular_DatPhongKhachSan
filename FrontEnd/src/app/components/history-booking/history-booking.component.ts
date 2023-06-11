@@ -24,14 +24,7 @@ export class HistoryBookingComponent {
             .getBookingRoomByid(this.email)
             .subscribe((data: any) => {
                 this.history = data;
-                console.log('data', data);
-                // console.log("Id", data[0]?.roomId)
-
-                // this.room.getRoomById(data[0]?.roomId).subscribe(
-                //   (data2: any) => {
-                //     this.history = data2;
-                //   },
-                // )
+                console.log('data', data);            
             });
     }
 }
