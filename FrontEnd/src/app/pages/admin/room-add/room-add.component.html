@@ -1,10 +1,13 @@
 <form (ngSubmit)="onHandleSubmit()" [formGroup]="roomForm">
+    <div class="m-3 text-capitalize">
+        <h2>Add new room</h2>
+    </div>
     <div class="mb-3">
         <input
             type="text"
             formControlName="name"
             class="form-control"
-            placeholder="Tên sản phẩm"
+            placeholder="Room name"
         />
     </div>
     <div class="mb-3">
@@ -12,7 +15,7 @@
             type="number"
             formControlName="price"
             class="form-control"
-            placeholder="Giá sản phẩm"
+            placeholder="Room Price"
         />
     </div>
     <div class="mb-3">
@@ -20,7 +23,7 @@
             type="text"
             formControlName="img"
             class="form-control"
-            placeholder="Ảnh sản phẩm"
+            placeholder="Room image"
         />
     </div>
     <div class="mb-3">
@@ -28,7 +31,7 @@
             type="text"
             formControlName="description"
             class="form-control"
-            placeholder="Mô Tả sản phẩm"
+            placeholder="Description"
         />
     </div>
     <div class="mb-3">
@@ -40,5 +43,5 @@
           </select>          
     </div>
     <!-- {{ room | json }} -->
-    <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
+    <button type="submit" class="btn btn-primary text-black-50 hover:text-white-50">Submit</button>
 </form>
