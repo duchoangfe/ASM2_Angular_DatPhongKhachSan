@@ -14,6 +14,7 @@ export class BookingRoomComponent implements OnInit {
     _id: any;
     name: any;
     email: any;
+    roomId: any
     hasUserInfo: any;
     rooms: IRoom[] = [];
     checkInDate: any;
@@ -24,8 +25,8 @@ export class BookingRoomComponent implements OnInit {
         private roomService: RoomService,
         private route: ActivatedRoute,
         private bookingService: BookingroomService
-    ) {}
-
+    ) {};
+    
     ngOnInit() {
         this.name = localStorage.getItem('name');
         this.email = localStorage.getItem('email');
@@ -36,9 +37,12 @@ export class BookingRoomComponent implements OnInit {
 
             this.roomService.getRoomById(_id as any).subscribe((data: any) => {
                 this.rooms = [data.room];
+                console.log(data.room);
+                
             });
         });
     }
+
 
     bookRoom() {
         const nameValue =
@@ -66,6 +70,7 @@ export class BookingRoomComponent implements OnInit {
         this.checkInDate = new Date(checkInValue);
         this.checkOutDate = new Date(checkOutValue);
         this.numberOfGuests = parseInt(numberOfGuestsValue, 10) || 0;
+        // this.roomId = 
         const bookingData = {
             name: this.name,
             email: this.email,

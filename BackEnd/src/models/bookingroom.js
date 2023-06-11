@@ -6,24 +6,12 @@ const bookingroom = new mongoose.Schema(
     name: {
       type: String,
     },
-    price: {
-      type: Number,
-    },
-    img: {
-      type: String,
-    },
-    description: {
-      type: String,
-    },
-    categoryId: {
-      type: mongoose.Types.ObjectId,
-      ref: 'Category',
-    },
-    user: {
-      type: String
-    },
     email: {
       type: String
+    },
+    roomId: {
+      type: mongoose.Types.ObjectId,
+            ref: "Room",
     },
     checkInDate: {
       type: String

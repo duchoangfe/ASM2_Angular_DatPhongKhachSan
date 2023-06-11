@@ -19,6 +19,7 @@ const roomSchema = new mongoose.Schema(
             type: mongoose.Types.ObjectId,
             ref: "Category",
         },
+        bookingRoom: [{ type: mongoose.Types.ObjectId, ref: "Room" }],
         brand: {
             type: mongoose.Types.ObjectId,
             ref: "Brand",
