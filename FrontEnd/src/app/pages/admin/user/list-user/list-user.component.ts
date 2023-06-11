@@ -12,16 +12,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ListUserComponent {
   users: User[] = [];
   title = "Quản Lý User";
-
-
-
   constructor(
     private user: UserService,
     private route: ActivatedRoute
   ) {
     this.user.getUser().subscribe((data: any) => {
-      this.users = data.user;
-      console.log(data.user);
+      this.users = data.users;
+      console.log(data.users);
       
       // console.log("user",  this.users)
     },
@@ -40,7 +37,6 @@ export class ListUserComponent {
     this.user.inActiveAccount(_id).subscribe(() => {
       this.user.getUser().subscribe((data: any) => {
         this.users = data.users;
-        // console.log("user",  this.users)
       },
         (error) => console.log(error.message)
       );
