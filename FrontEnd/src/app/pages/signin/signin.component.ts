@@ -37,6 +37,9 @@ export class SigninComponent {
                     localStorage.setItem('name', data.user.name);
                     localStorage.setItem('email', data.user.email);
                     this.router.navigateByUrl('/');
+                    setTimeout(() => {
+                        location.reload();
+                    }, 10);
                 });
         }
     }

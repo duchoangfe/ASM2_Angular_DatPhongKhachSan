@@ -1,34 +1,26 @@
-<p>history-booking works!</p>
-<div class="container">
-    <a routerLink="/admin/room/add">Thêm mới</a>
-    <table class="table table-borederd">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Khách Hàng</th>
-          <th>Email</th>
-          <th>Tên Phòng</th>
-          <th>Ngày Đặt</th>
-          <th>Ngày Hết </th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody *ngIf="history && history.length">
-        <tr *ngFor="let historys of history; index as i">
-          <td>{{ i + 1 }}</td>
-          <td>{{ historys.name }}</td>
-          <td>{{ historys.email }}</td>
-          <td>{{ historys.roomName }}</td>
-          <td>{{ historys.checkInDate }}</td>
-          <td>{{ historys.checkOutDate}}</td>
-  
-          <!-- <td>
-            <button class="btn btn-danger mr-1" (click)="removeItem(room._id)">
-              Xóa
-            </button>
-            <a routerLink="/admin/room/{{ room._id }}/edit">Cập nhật</a>
-          </td> -->
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<div class="container mx-auto px-4">
+  <h1 class=" font-bold text-[20px] my-[20px]">Lịch Phòng Đã Đặt</h1>
+  <table class="table-auto w-full">
+    <thead>
+      <tr>
+        <th class="px-4 py-2">#</th>
+        <th class="px-4 py-2">Khách Hàng</th>
+        <th class="px-4 py-2">Email</th>
+        <th class="px-4 py-2">Tên Phòng</th>
+        <th class="px-4 py-2">Ngày Đặt</th>
+        <th class="px-4 py-2">Ngày Hết</th>
+        <th class="px-4 py-2"></th>
+      </tr>
+    </thead>
+    <tbody *ngIf="history && history.length">
+      <tr *ngFor="let historys of history; index as i">
+        <td class="border px-4 py-2">{{ i + 1 }}</td>
+        <td class="border px-4 py-2">{{ historys.name }}</td>
+        <td class="border px-4 py-2">{{ historys.email }}</td>
+        <td class="border px-4 py-2">{{ historys.roomName }}</td>
+        <td class="border px-4 py-2">{{ historys.checkInDate }}</td>
+        <td class="border px-4 py-2">{{ historys.checkOutDate }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

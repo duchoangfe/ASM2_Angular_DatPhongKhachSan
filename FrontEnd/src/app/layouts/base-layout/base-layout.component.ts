@@ -21,6 +21,9 @@ export class BaseLayoutComponent {
         localStorage.removeItem('email');
         localStorage.removeItem('accessToken');
         localStorage.removeItem('role');
+        setTimeout(() => {
+            location.reload();
+        }, 10);
 
         this.router.navigateByUrl('/');
     }

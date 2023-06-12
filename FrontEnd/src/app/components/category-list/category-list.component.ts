@@ -19,11 +19,13 @@ export class CategoryListComponent {
         );
     }
     removeItem(_id: any) {
-        this.categoryService.deleteCategory(_id).subscribe(() => {
-            console.log(_id);
-            this.categories = this.categories.filter(
-                (item) => item._id !== _id
-            );
-        });
+        if (window.confirm('Bạn có muốn xóa không ?')) {
+            this.categoryService.deleteCategory(_id).subscribe(() => {
+                console.log(_id);
+                this.categories = this.categories.filter(
+                    (item) => item._id !== _id
+                );
+            });
+        }
     }
 }

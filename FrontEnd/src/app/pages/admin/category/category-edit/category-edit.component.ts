@@ -27,7 +27,7 @@ export class CategoryEditComponent {
 
             this.categoryService.getCategoryById(id).subscribe((category) => {
                 this.category = category;
-                console.log("categori",category)
+                console.log('categori', category);
 
                 this.categoryForm.patchValue({
                     name: this.category.name,
@@ -45,7 +45,9 @@ export class CategoryEditComponent {
         this.categoryService.updateCategory(category).subscribe((data) => {
             console.log(data);
         });
-
+        setTimeout(() => {
+            location.reload();
+        }, 10);
         this.router.navigate(['admin/categories']);
     }
 }

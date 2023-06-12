@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IRoom } from 'src/app/interfaces/Room';
 import { RoomService } from 'src/app/services/room.service';
 import { BookingroomService } from './../../services/bookingroom.service';
@@ -24,7 +24,8 @@ export class BookingRoomComponent implements OnInit {
     constructor(
         private roomService: RoomService,
         private route: ActivatedRoute,
-        private bookingService: BookingroomService
+        private bookingService: BookingroomService,
+        private router: Router
     ) {}
 
     ngOnInit() {
@@ -46,8 +47,8 @@ export class BookingRoomComponent implements OnInit {
     bookRoom() {
         const nameValue =
             document.querySelector('.text-black')?.textContent || '';
-        const emailValue =
-            document.querySelector('.text-black')?.textContent || '';
+        const emailValue = document.querySelector('.email')?.textContent || '';
+
         const checkInValue =
             (
                 document.querySelector(
@@ -65,11 +66,11 @@ export class BookingRoomComponent implements OnInit {
                 ?.value || '';
 
         this.name = nameValue.trim();
-        this.email = emailValue.trim();
+        this.email = emailValue;
         this.checkInDate = new Date(checkInValue);
         this.checkOutDate = new Date(checkOutValue);
         this.numberOfGuests = parseInt(numberOfGuestsValue, 10) || 0;
-        // this.roomId =
+
         const bookingData = {
             name: this.name,
             email: this.email,
@@ -80,16 +81,17 @@ export class BookingRoomComponent implements OnInit {
             roomId: this.rooms[0]._id,
         };
 
-        console.log('Tên:', this.name);
-        console.log('Email:', this.email);
-        console.log('Thời gian nhận phòng:', this.checkInDate);
-        console.log('Thời gian trả phòng:', this.checkOutDate);
-        console.log('Số người:', this.numberOfGuests);
-        console.log('Thông tin phòng:', this.rooms);
+        // console.log('Tên:', this.name);
+        // console.log('Email:', this.email);
+        // console.log('Thời gian nhận phòng:', this.checkInDate);
+        // console.log('Thời gian trả phòng:', this.checkOutDate);
+        // console.log('Số người:', this.numberOfGuests);
+        // console.log('Thông tin phòng:', this.rooms);
         this.bookingService.BookigRoom(bookingData).subscribe(
             (response) => {
                 console.log('Đặt phòng thành công:', response);
                 alert('Đặt Phòng Thành Công !');
+                this.router.navigateByUrl('history');
             },
             (error) => {
                 console.error('Lỗi khi đặt phòng:', error);

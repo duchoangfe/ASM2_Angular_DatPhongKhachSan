@@ -1,15 +1,17 @@
 <header class="bg-dark py-4">
   <nav class="container mx-auto d-flex justify-content-between align-items-center">
-    <a routerLink="" class="text-white text-lg fw-bold text-decoration-none">Hotel Name</a>
+    <a routerLink="" class="text-white text-lg fw-bold text-decoration-none">Hotel</a>
     <ul class="list-unstyled d-flex">
       <li class="mx-2"><a routerLink="" class="text-white text-decoration-none">Home</a></li>
-      <li class="mx-2"><a routerLink="categories" class="text-white text-decoration-none">Category</a></li>
+      <!-- <li class="mx-2"><a routerLink="categories" class="text-white text-decoration-none">Category</a></li> -->
       <li class="mx-2"><a routerLink="room" class="text-white text-decoration-none">Rooms</a></li>
-      <li class="mx-2"><a routerLink="about" class="text-white text-decoration-none">About</a></li>
-      <li class="mx-2"><a routerLink="contact" class="text-white text-decoration-none">Contact</a></li>
+      <!-- <li class="mx-2"><a routerLink="about" class="text-white text-decoration-none">About</a></li>
+      <li class="mx-2"><a routerLink="contact" class="text-white text-decoration-none">Contact</a></li> -->
       <ng-container *ngIf="hasUserInfo">
         <p class="text-white">Welcome, {{ name }}!</p>
         <button class="btn btn-primary" (click)="logout()">Đăng xuất</button>
+        <li class="mx-2"><a routerLink="history" class="btn btn-primary text-white">Lịch Đã Đặt</a></li>
+
       </ng-container>
 
       <ng-container *ngIf="!hasUserInfo">

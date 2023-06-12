@@ -24,7 +24,7 @@ export class HistoryBookingComponent {
             .getBookingRoomByid(this.email)
             .subscribe((data: any) => {
                 this.history = data;
-                console.log('data', data);            
+                console.log('data', data);
             });
     }
 }

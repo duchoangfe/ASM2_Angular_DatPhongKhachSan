@@ -31,7 +31,9 @@ export class CategoryAddComponent {
         this.categoryService.addCategory(category).subscribe((data) => {
             console.log(data);
         });
-
+        setTimeout(() => {
+            location.reload();
+        }, 10);
         this.router.navigate(['/admin/categories']);
     }
 }

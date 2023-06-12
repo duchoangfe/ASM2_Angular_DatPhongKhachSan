@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container my-[30px]">
   <div class="row">
     <div class="col-md-4" *ngFor="let room of rooms; index as i">
       <div class="card">
@@ -13,12 +13,10 @@
             <a class="btn btn-primary" [routerLink]="['/booking', room._id]">Đặt Phòng Ngay</a>
           </ng-container>
 
-
           <ng-container *ngIf="!hasUserInfo">
             <p>Bạn cần phải đăng nhập để đặt phòng.</p>
             <a href="/signin" class="btn btn-primary">Đăng nhập</a>
           </ng-container>
-
 
         </div>
       </div>
