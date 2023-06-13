@@ -67,3 +67,16 @@ export const getAll = async (req, res) => {
 
 
 };
+export const remove = async (req, res) => {
+  try {
+    const room = await bookingroom.findByIdAndDelete(req.params.id);
+    return res.json({
+      message: 'Xóa sản phẩm  thành công',
+      room,
+    });
+  } catch (error) {
+    return res.status(400).json({
+      message: "Khong the Xoa",
+    });
+  }
+};

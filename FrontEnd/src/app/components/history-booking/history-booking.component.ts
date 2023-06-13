@@ -27,4 +27,15 @@ export class HistoryBookingComponent {
                 console.log('data', data);
             });
     }
+    removeItem(_id: any) {
+        // xoa API
+        this.bookingRoom.deleteBokingroom(_id).subscribe(() => {
+            // reRender
+            if (window.confirm('bạn có chắc chắn muốn xóa?')) {
+                this.history = this.history.filter((item) => item._id !== _id);
+                alert('Xóa thành công');
+            } else {
+            }
+        });
+    }
 }

@@ -18,4 +18,9 @@ export class BookingroomService {
             `http://localhost:8080/api/bookingroom/${email}`
         );
     }
+    deleteBokingroom(id: number): Observable<bookingRoom> {
+        return this.http.delete<bookingRoom>(
+            `http://localhost:8080/api/bookingroom/${id}`
+        );
+    }
 }
